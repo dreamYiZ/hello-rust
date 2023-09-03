@@ -1,9 +1,10 @@
-fn main() {
+fn main(){
 
-    let condition = true;
 
-    let number = if condition { 5 } else { 6 };
+    for number in (1..10).rev(){
 
-    println!("the number is {number}");
-    
+        println!("number: {number}");
+    }
+
+    println!("LIFTOFF!");
 }
