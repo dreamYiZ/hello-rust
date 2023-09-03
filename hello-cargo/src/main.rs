@@ -1,29 +1,17 @@
-fn main(){
+fn main() {
+    let s1 = String::from("hello");
 
-    // a variable only has one ownership
+    let (s2,l) = calculate_length(s1);
 
-    let x1 = give_ownership();
+    // println!("{s1}");
 
-    let x2 = String::from("hello");
+    println!("{s2} {l}");
+}
 
+fn calculate_length(s: String) -> (String, usize) {
+    let s_len = s.len();
 
-    println!("x2 {}", x2);
-    let x3 = take_and_give_ownership(x2.clone());
-
-    println!("x2 {}", x2);
-
-
-    println!("{x1}{x3}");
+    (s, s_len)
 }
 
 
-fn give_ownership()->String{
-    let x = String::from("Yours");
-
-    x
-}
-
-
-fn take_and_give_ownership(x: String)->String{
-    x
-}
