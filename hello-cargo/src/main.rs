@@ -1,10 +1,20 @@
 fn main(){
 
 
-    for number in (1..10).rev(){
+    let mut str = String::from("Hello");
 
-        println!("number: {number}");
-    }
+    str.push_str(", World!");
 
-    println!("LIFTOFF!");
+
+    println!("{str}");
+
+    let s1 = "hello";
+    let s2 = "world!";
+
+    println!("{s1} {s2}");
+
+    let s3 = "hello";
+    let s4 = s3.clone();
+
+    println!("s3 == s4? {} {}", s3 == s4, ".");
 }
