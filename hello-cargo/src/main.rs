@@ -1,11 +1,9 @@
 fn main() {
-    let lucky_number = 7;
 
-    let number = 5;
+    let condition = true;
+
+    let number = if condition { 5 } else { 6 };
+
+    println!("the number is {number}");
     
-    if number < 7 {
-        println!("condition is true");
-    } else {
-        println!("condition is false");
-    }
 }
