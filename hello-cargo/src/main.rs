@@ -1,21 +1,29 @@
 fn main(){
 
-  let x = String::from("hello");
+    // a variable only has one ownership
 
-  take_ownership(x);
+    let x1 = give_ownership();
 
-  let x = 5;
+    let x2 = String::from("hello");
 
-  make_copy(x);
-  
+
+    println!("x2 {}", x2);
+    let x3 = take_and_give_ownership(x2.clone());
+
+    println!("x2 {}", x2);
+
+
+    println!("{x1}{x3}");
 }
 
 
-fn take_ownership(some_string: String){
+fn give_ownership()->String{
+    let x = String::from("Yours");
 
-    println!("{}", some_string);
+    x
 }
 
-fn make_copy(some_integer: i32){
-    println!("{}", some_integer);
+
+fn take_and_give_ownership(x: String)->String{
+    x
 }
