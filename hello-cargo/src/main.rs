@@ -1,14 +1,12 @@
-fn main(){
+fn main() {
+    let mut s1 = String::from("hello");
 
-    let s1 = String::from("hello");
+    change(&mut s1);
 
-    let l = calculate_len(&s1);
-
-    println!("{s1} {l}");
-
+    println!("{s1}");
 }
 
+fn change(s: &mut String) {
+    s.push_str(",world");
 
-fn calculate_len(s: &String)->usize{
-    s.len()
 }
