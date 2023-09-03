@@ -1,9 +1,16 @@
-fn main() {
-    let mut s1 = String::from("hello");
+fn main(){
 
 
-    let s2 = &mut s1;
-    let s3 = &mut s1;
+    let mut s = String::from("hello");
 
-    println!("{s2} {s3}");
+    {
+        let r1 = &mut s;
+
+
+    }
+
+
+    let r2  = &mut s;
+
+    println!("{r2}");
 }
