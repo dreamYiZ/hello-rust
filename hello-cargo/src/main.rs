@@ -1,15 +1,10 @@
-fn main() {
-    let dice_roll = 9;
+fn main(){
 
-    match dice_roll {
-        3 => add_fancy_hat(),
-        7 => remove_fancy_hat(),
-        _ => reroll(),
+    let mut count = 0;
+
+    match coin {
+        Coin::Quarter (state) => println!("State quarter from {:?}!", state),
+        -=> count+=1,
     }
+
 }
-
-fn add_fancy_hat() {}
-
-fn remove_fancy_hat() {}
-
-fn reroll() {}
