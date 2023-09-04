@@ -1,12 +1,12 @@
+use std::collections::HashMap;
+
 fn main() {
-    let mut s = String::from("foo");
+    let mut scores = HashMap::new();
 
-    s.push_str(" bar");
+    scores.insert(String::from("blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
 
-    let s2 = "!";
-
-    s.push_str(&s2);
-    s.push_str(s2);
-
-    println!("{}", s);
+    for (key, value) in &scores {
+        println!("{key}: {value}");
+    }
 }
