@@ -1,4 +1,3 @@
-
 #[derive(Debug)]
 struct User {
     active: bool,
@@ -7,7 +6,14 @@ struct User {
     sign_in_count: u64,
 }
 
+struct Color(i32, i32, i32);
+
+
+
 fn main() {
+
+    let black_color = Color(0,0,0);
+
     let user = User {
         active: true,
         username: String::from("rentoo"),
@@ -15,13 +21,11 @@ fn main() {
         sign_in_count: 1,
     };
 
-    let user2 = build_user(String::from("rentoo2"),
-                                    String::from("rentoo2@rentoo.com"));
-
+    let user2 = build_user(String::from("rentoo2"), String::from("rentoo2@rentoo.com"));
 
     println!("{:?}", user2);
-// 
-    let user3 = User{
+    //
+    let user3 = User {
         email: String::from("rentoo3@rentoo.com"),
         ..user2
     };
