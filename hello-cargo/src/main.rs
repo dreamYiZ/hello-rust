@@ -1,27 +1,19 @@
 fn main() {
-    // let a = [1, 2, 3, 4, 5];
+    let mut s = String::from("Hello World!");
 
-    // let slice = &a[1..3];
+    let word = first_word(&s);
 
+    println!("{}", word);
+}
 
-    // println!("{}", slice.len());
-    // assert_eq!(slice, &[2,3]);
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
 
-    let s = String::from ("Hello World");
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
 
-
-    // let s1 = &s[0..5];
-
-    // let s2 = &s[6..s.len()];
-
-    // println!("{}", s1);
-    // println!("{}", s2);
-
-
-    let s1 = &s[0..2];
-
-    println!("{}",s1);
-    let s1 = &s[..2];
-    println!("{}",s1);
-
+    &s[..]
 }
