@@ -1,44 +1,25 @@
-#[derive(Debug)]
-struct User {
-    active: bool,
-    username: String,
-    email: String,
-    sign_in_count: u64,
-}
-
-struct Color(i32, i32, i32);
-
 
 
 fn main() {
+    let width = 50;
+    let height = 30;
 
-    let black_color = Color(0,0,0);
+    let rect1 = (50,32);
 
-    let user = User {
-        active: true,
-        username: String::from("rentoo"),
-        email: String::from("rentoo@ren.com"),
-        sign_in_count: 1,
-    };
+    let area1 = area(width, height);
 
-    let user2 = build_user(String::from("rentoo2"), String::from("rentoo2@rentoo.com"));
+    println!("area is {}", area1);
 
-    println!("{:?}", user2);
-    //
-    let user3 = User {
-        email: String::from("rentoo3@rentoo.com"),
-        ..user2
-    };
 
-    println!("{:?}", user);
-    println!("{:?}", user3);
+    println!("area2 is {}", get_area_2(rect1));
 }
 
-fn build_user(username: String, email: String) -> User {
-    User {
-        active: true,
-        username: username,
-        email: email,
-        sign_in_count: 1,
-    }
+fn area(w: i32, h: i32) -> i32 {
+    w * h
+}
+
+
+fn get_area_2 (dimensions: (i32, i32))->i32{
+
+    dimensions.0 * dimensions.1
 }
