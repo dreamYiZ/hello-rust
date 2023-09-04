@@ -1,15 +1,25 @@
-#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
 }
 
-fn main() {
-    let scale = 2;
-    let rect1 = Rectangle {
-        width: dbg!(30 * scale),
+
+impl Rectangle{
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+
+
+fn main(){
+
+    let rect1 = Rectangle{
+        width: 30,
         height: 50,
     };
 
-    dbg!(&rect1);
+
+
+    println!("the area of the rectangle is {}", rect1.area());
 }
