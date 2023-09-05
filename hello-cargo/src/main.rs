@@ -1,16 +1,18 @@
-use std::collections::HashMap;
+use std::fs::File;
 
-fn main() {
+enum Result <T, E>{
+    Ok(T),
+    Err(E),
+}
 
-    let text = "hello world wonderful world";
 
-    let mut map = HashMap::new();
+fn main(){
+    // panic!("crash and burn");
 
-    for word in text.split_whitespace() {
-        let count = map.entry(word).or_insert(0);
+    let greeting_file_result = File::open("hello.txt");
 
-        *count += 1;
-    }
-
-    println!("{:?}", map);
+    let greeting_file = match greeting_file_result{
+        Ok(file)=>file,
+        Err(error)=>panic!("Problem opening the file: {:?}", error),
+    };
 }
