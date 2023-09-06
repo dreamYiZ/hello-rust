@@ -1,24 +1,18 @@
-#[derive(Debug)]
-enum List {
-    Cons (Rc<RefCell<i32>>, Rc<List>),
-    Nil,
-}
+use std::thread;
+use std::time::Duration;
 
-use crate::List::{Cons, Nil};
-use std::cell::RefCell;
-use std::rc::Rc;
+fn main() {
+    let handle = thread::spawn(|| {
+        for i in 1..10 {
+            println!("spawn: {}", i);
+            thread::sleep(Duration::from_millis(1));
+        }
+    });
 
+    for i in 1..5 {
+        println!("main thread: {}", i);
+        thread::sleep(Duration::from_millis(1));
+    }
 
-fn main(){
-    let value = Rc::new (RefCell::new(5));
-
-    let a = Rc::new(Cons(Rc::clone(&value), Rc::new (Nil)));
-    let b = Cons(Rc::new(RefCell::new(3)), Rc::clone (&a));
-    let c = Cons(Rc::new(RefCell::new(4)), Rc::clone (&a));
-
-    *value.borrow_mut() += 10;
-
-    println!("a after = {:?}", a);
-    println!("b after = {:?}", b);
-    println!("c after = {:?}", c);
+    handle.join().unwrap();
 }
