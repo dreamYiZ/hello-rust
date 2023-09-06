@@ -1,18 +1,18 @@
-use std::fs::File;
-
-enum Result <T, E>{
-    Ok(T),
-    Err(E),
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
 }
 
-
 fn main(){
-    // panic!("crash and burn");
 
-    let greeting_file_result = File::open("hello.txt");
+    let mut list = [
+        Rectangle {width :10 ,height:6},
+        Rectangle { width: 3, height: 2},
+        Rectangle {width :7, height:5},
+    ];
 
-    let greeting_file = match greeting_file_result{
-        Ok(file)=>file,
-        Err(error)=>panic!("Problem opening the file: {:?}", error),
-    };
+    list.sort_by_key(|r| r.width);
+
+    println!("{:#?}" ,list);
 }

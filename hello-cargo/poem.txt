@@ -1,0 +1,5 @@
+1 、5 年以上 JAVA 工作经验，Java 基础知识扎实（优秀者可放宽）；
+2 、熟练掌握基础数据结构和算法，确实在工作中使用过；
+3 、有过微服务架构开发经验，能熟练使用 Mybatis 、Mybatis-plus 、SpringBoot 、SpringCloud 、Nacos 、rabbitMQ 等软件进行开发；
+4 、熟悉数据库应用，能够根据场景进行数据库表设计；熟练使用 SQL 语句，工作中使用过 Mysql ，Redis 等 SQL,NoSql 数据库，并有一定程度的优化经验；
+5 、有项目管理经验优先，有前端开发经验优先；
